@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/java/org/jivesoftware/webchat/personal
+END
+ChatMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/java/org/jivesoftware/webchat/personal/ChatMessage.java
+END
+PersonalChat.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/java/org/jivesoftware/webchat/personal/PersonalChat.java
+END
+ChatPoller.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/java/org/jivesoftware/webchat/personal/ChatPoller.java
+END

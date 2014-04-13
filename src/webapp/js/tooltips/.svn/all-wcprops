@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/js/tooltips
+END
+fadomatic.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/js/tooltips/fadomatic.js
+END
+domLib.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/js/tooltips/domLib.js
+END
+domTT.js
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/js/tooltips/domTT.js
+END
+domTT_drag.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/js/tooltips/domTT_drag.js
+END

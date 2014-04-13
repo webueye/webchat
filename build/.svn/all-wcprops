@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/repos/!svn/ver/13347/fastpath/webchat/trunk/build
+END
+build.properties.template
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/repos/!svn/ver/13047/fastpath/webchat/trunk/build/build.properties.template
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/repos/!svn/ver/13347/fastpath/webchat/trunk/build/build.xml
+END
+launcher.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/build/launcher.xml
+END

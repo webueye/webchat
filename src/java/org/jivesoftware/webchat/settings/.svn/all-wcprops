@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/java/org/jivesoftware/webchat/settings
+END
+ChatSettingsManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/java/org/jivesoftware/webchat/settings/ChatSettingsManager.java
+END
+ConnectionSettings.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/java/org/jivesoftware/webchat/settings/ConnectionSettings.java
+END

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/repos/!svn/ver/13046/fastpath/webchat/trunk/src/java/org/jivesoftware/webchat/actions
+END
+WorkgroupStatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/repos/!svn/ver/12985/fastpath/webchat/trunk/src/java/org/jivesoftware/webchat/actions/WorkgroupStatus.java
+END
+ChatWriter.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/java/org/jivesoftware/webchat/actions/ChatWriter.java
+END
+ChatQueue.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/java/org/jivesoftware/webchat/actions/ChatQueue.java
+END
+ChatStarter.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/repos/!svn/ver/13046/fastpath/webchat/trunk/src/java/org/jivesoftware/webchat/actions/ChatStarter.java
+END
+WebBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/java/org/jivesoftware/webchat/actions/WebBean.java
+END
+WorkgroupChangeListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/java/org/jivesoftware/webchat/actions/WorkgroupChangeListener.java
+END

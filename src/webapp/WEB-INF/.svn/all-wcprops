@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/repos/!svn/ver/12985/fastpath/webchat/trunk/src/webapp/WEB-INF
+END
+taglibs-mailer.tld
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/repos/!svn/ver/12985/fastpath/webchat/trunk/src/webapp/WEB-INF/taglibs-mailer.tld
+END
+dwr.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/repos/!svn/ver/12985/fastpath/webchat/trunk/src/webapp/WEB-INF/dwr.xml
+END
+web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/repos/!svn/ver/12985/fastpath/webchat/trunk/src/webapp/WEB-INF/web.xml
+END

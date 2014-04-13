@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/java/org/jivesoftware/webchat/providers
+END
+MetaDataProvider.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/java/org/jivesoftware/webchat/providers/MetaDataProvider.java
+END
+SettingsDataProvider.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/java/org/jivesoftware/webchat/providers/SettingsDataProvider.java
+END
+SettingsPrivateData.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/java/org/jivesoftware/webchat/providers/SettingsPrivateData.java
+END
+GenericProvider.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/java/org/jivesoftware/webchat/providers/GenericProvider.java
+END
+Settings.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/java/org/jivesoftware/webchat/providers/Settings.java
+END

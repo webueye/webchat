@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/repos/!svn/ver/13338/fastpath/webchat/trunk/src/java/org/jivesoftware/webchat
+END
+ChatSession.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/repos/!svn/ver/13337/fastpath/webchat/trunk/src/java/org/jivesoftware/webchat/ChatSession.java
+END
+ChatUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/repos/!svn/ver/12985/fastpath/webchat/trunk/src/java/org/jivesoftware/webchat/ChatUtils.java
+END
+LoadTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/repos/!svn/ver/12985/fastpath/webchat/trunk/src/java/org/jivesoftware/webchat/LoadTest.java
+END
+SetupFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/java/org/jivesoftware/webchat/SetupFilter.java
+END
+ChatManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/repos/!svn/ver/13338/fastpath/webchat/trunk/src/java/org/jivesoftware/webchat/ChatManager.java
+END
+FastpathServlet.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/java/org/jivesoftware/webchat/FastpathServlet.java
+END
+ChatUser.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/java/org/jivesoftware/webchat/ChatUser.java
+END
+SetCharacterEncodingFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/java/org/jivesoftware/webchat/SetCharacterEncodingFilter.java
+END

@@ -1,0 +1,209 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/repos/!svn/ver/13334/fastpath/webchat/trunk/src/webapp
+END
+view-queue.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/!svn/ver/12985/fastpath/webchat/trunk/src/webapp/view-queue.jsp
+END
+Webapp.iml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/Webapp.iml
+END
+transcriptsrc.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/transcriptsrc.jsp
+END
+transcriptmain.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/repos/!svn/ver/12985/fastpath/webchat/trunk/src/webapp/transcriptmain.jsp
+END
+style.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/style.jsp
+END
+agentinfo.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/agentinfo.jsp
+END
+chatroom.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/12985/fastpath/webchat/trunk/src/webapp/chatroom.jsp
+END
+transcriptprint.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/transcriptprint.jsp
+END
+userinfo.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/12985/fastpath/webchat/trunk/src/webapp/userinfo.jsp
+END
+test-connection.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/test-connection.jsp
+END
+helpwin.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/helpwin.jsp
+END
+setup-completed.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/setup-completed.jsp
+END
+exit-window.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/exit-window.jsp
+END
+lostconnection.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/lostconnection.jsp
+END
+setup-index.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/setup-index.jsp
+END
+setup-finished.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/setup-finished.jsp
+END
+fatal.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/fatal.jsp
+END
+chat-ended.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/chat-ended.jsp
+END
+request-agent.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/request-agent.jsp
+END
+submitter.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/submitter.jsp
+END
+queue.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/queue.jsp
+END
+chatmain.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/13334/fastpath/webchat/trunk/src/webapp/chatmain.jsp
+END
+index.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/index.jsp
+END
+common.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/common.js
+END
+agent-image.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/agent-image.jsp
+END
+yakframe.html
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/yakframe.html
+END
+contact-agent.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/contact-agent.jsp
+END
+jivelive.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/jivelive.jsp
+END
+queue_updater.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/queue_updater.jsp
+END
+setup-style.css
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/setup-style.css
+END
+global.css
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/global.css
+END
+exit-queue.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/exit-queue.jsp
+END
+start.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/start.jsp
+END
+framemain.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/!svn/ver/10482/fastpath/webchat/trunk/src/webapp/framemain.jsp
+END
