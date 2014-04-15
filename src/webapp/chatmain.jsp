@@ -10,6 +10,7 @@
   - agreement with Jive.
 --%>
 
+<%@page import="net.ueye.webchat.utils.CookieUtil"%>
 <%@ page errorPage = "fatal.jsp"
          import = "org.jivesoftware.webchat.*,
                    java.util.Map,
@@ -45,6 +46,7 @@
 
     <script language="JavaScript" type="text/javascript">
      var nickname = '<%= StringUtils.escapeHTMLTags(userNickname) %>';
+     var uniqueid = '<%= CookieUtil.getUniqueid(request) %>';
      var isRedirecting = false;
 
      var checker = 0;
@@ -72,7 +74,7 @@
      }
 
      connectionChecker();
-
+     
      function successful(b) {
          addText('', "Reconnection successful.");
 
@@ -239,6 +241,12 @@
          <%
       }
     %>
+    	
+    	
+       	DWREngine.setAsync(false); 
+       	room.getChatLogs(uniqueid, nickname, insertLogMessages);
+       	DWREngine.setAsync(true); 
+    
        addChatText(window.frames['yak'], '', '<%= FormText.getChatRoomWelcomeMessage(initialAgent, workgroup) %>');
        checkForNewMessages();
        checkIfAgentTyping();
@@ -246,6 +254,12 @@
 
      function addText(from, body) {
        addChatText(window.frames['yak'], from, body);
+     }
+     
+     function insertLogMessages(messages){
+    	 for(i=0; i<messages.length;i++){
+    		 addChatText(window.frames['yak'], messages[i].sender, messages[i].content);
+    	 }
      }
     </script>
    </head>
@@ -319,6 +333,7 @@
 
 
     <script>
+    
     var timeOut;
 
     function checkForNewMessages() {
@@ -403,6 +418,8 @@
           window.location.href = "exit-window.jsp";
         }
       }
+      
+      
     </script>
 
    </body>

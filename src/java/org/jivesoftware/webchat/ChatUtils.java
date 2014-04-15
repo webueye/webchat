@@ -11,212 +11,243 @@
  */
 package org.jivesoftware.webchat;
 
+import java.net.URL;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+
+import net.ueye.webchat.utils.ChatLog;
+
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.type.TypeReference;
+import org.jivesoftware.smack.XMPPException;
+import org.jivesoftware.smack.packet.Message;
+import org.jivesoftware.smack.util.StringUtils;
+import org.jivesoftware.smackx.MessageEventManager;
+import org.jivesoftware.smackx.muc.MultiUserChat;
 import org.jivesoftware.smackx.workgroup.user.Workgroup;
 import org.jivesoftware.webchat.actions.ChatQueue;
 import org.jivesoftware.webchat.personal.ChatMessage;
 import org.jivesoftware.webchat.util.FormText;
 import org.jivesoftware.webchat.util.WebLog;
 import org.jivesoftware.webchat.util.WebUtils;
-import org.jivesoftware.smack.XMPPException;
-import org.jivesoftware.smack.packet.Message;
-import org.jivesoftware.smack.util.StringUtils;
-import org.jivesoftware.smackx.MessageEventManager;
-import org.jivesoftware.smackx.muc.MultiUserChat;
-
-import java.util.Iterator;
-import java.util.List;
 
 /**
- * ChatUtils handles basic messaging functionallity, including
- * the sending and queueing of messages.
- *
+ * ChatUtils handles basic messaging functionallity, including the sending and
+ * queueing of messages.
+ * 
  * @author Derek DeMoro
  */
 public class ChatUtils {
 
-    /**
-     * Returns all messages in a queue associated with the given
-     * chatID
-     *
-     * @param chatID the chatID.
-     * @return an Array of <code>ChatMessages</code>
-     */
-    public static ChatMessage[] getAllMessages(String chatID) {
-        ChatSession chatSession = getChatSession(chatID);
-        if (chatSession == null || chatSession.isClosed()) {
-            return null;
-        }
+	/**
+	 * Returns all messages in a queue associated with the given chatID
+	 * 
+	 * @param chatID
+	 *            the chatID.
+	 * @return an Array of <code>ChatMessages</code>
+	 */
+	public static ChatMessage[] getAllMessages(String chatID) {
+		ChatSession chatSession = getChatSession(chatID);
+		if (chatSession == null || chatSession.isClosed()) {
+			return null;
+		}
 
-        List messages = chatSession.getMessageList();
-        ChatMessage[] m = (ChatMessage[])messages.toArray(new ChatMessage[messages.size()]);
-        chatSession.getMessageList().clear();
-        return m;
-    }
+		List messages = chatSession.getMessageList();
+		ChatMessage[] m = (ChatMessage[]) messages
+				.toArray(new ChatMessage[messages.size()]);
+		chatSession.getMessageList().clear();
+		return m;
+	}
 
-    /**
-     * Sends a message from a given <code>ChatSession</code> that is associated with
-     * a given chat id.
-     *
-     * @param chatID  the chat id.
-     * @param message the message to send.
-     */
-    public static void sendMessage(String chatID, String message) {
-        ChatSession chatSession = getChatSession(chatID);
+	/**
+	 * Sends a message from a given <code>ChatSession</code> that is associated
+	 * with a given chat id.
+	 * 
+	 * @param chatID
+	 *            the chat id.
+	 * @param message
+	 *            the message to send.
+	 */
+	public static void sendMessage(String chatID, String message) {
+		ChatSession chatSession = getChatSession(chatID);
 
-        // If the user doesn't have a chat session, notify them.
-        if (chatSession == null) {
-            return;
-        }
+		// If the user doesn't have a chat session, notify them.
+		if (chatSession == null) {
+			return;
+		}
 
-        // Notify user if the chat session has closed.
-        if (chatSession.isClosed() || !chatSession.isInGroupChat()) {
-            return;
-        }
+		// Notify user if the chat session has closed.
+		if (chatSession.isClosed() || !chatSession.isInGroupChat()) {
+			return;
+		}
 
-        // If the message isn't specified, do nothing.
-        if (message != null) {
-            try {
-                final MultiUserChat chat = chatSession.getGroupChat();
-                message = message.replaceAll("\r", " ");
+		// If the message isn't specified, do nothing.
+		if (message != null) {
+			try {
+				final MultiUserChat chat = chatSession.getGroupChat();
+				message = message.replaceAll("\r", " ");
 
-                // Handle odd case of double spacing
-                if (message.endsWith("\n")) {
-                    message = message.substring(0, message.length() - 1);
-                }
+				// Handle odd case of double spacing
+				if (message.endsWith("\n")) {
+					message = message.substring(0, message.length() - 1);
+				}
 
-                // update the transcript:
-                String body = WebUtils.applyFilters(message);
-                String nickname = chat.getNickname();
-                chatSession.updateTranscript(nickname, body);
+				// update the transcript:
+				String body = WebUtils.applyFilters(message);
+				String nickname = chat.getNickname();
+				chatSession.updateTranscript(nickname, body);
 
-                if (chat != null) {
-                    final Message chatMessage = new Message();
-                    chatMessage.setType(Message.Type.groupchat);
-                    chatMessage.setBody(message);
+				if (chat != null) {
+					final Message chatMessage = new Message();
+					chatMessage.setType(Message.Type.groupchat);
+					chatMessage.setBody(message);
 
-                    String room = chat.getRoom();
-                    chatMessage.setTo(room);
-                    chat.sendMessage(chatMessage);
-                }
-            }
-            catch (XMPPException e) {
-                WebLog.logError("Error sending message:", e);
-            }
-        }
-    }
+					String room = chat.getRoom();
+					chatMessage.setTo(room);
+					chat.sendMessage(chatMessage);
+				}
+			} catch (XMPPException e) {
+				WebLog.logError("Error sending message:", e);
+			}
+		}
+	}
 
-    /**
-     * Returns true if the user is typing.
-     * @param chatID the associated chat id.
-     * @return true if the agent is typing.
-     */
-    public static boolean isTyping(String chatID) {
-        ChatSession chatSession = getChatSession(chatID);
-        if (chatSession == null) {
-            return false;
-        }
+	/**
+	 * Returns true if the user is typing.
+	 * 
+	 * @param chatID
+	 *            the associated chat id.
+	 * @return true if the agent is typing.
+	 */
+	public static boolean isTyping(String chatID) {
+		ChatSession chatSession = getChatSession(chatID);
+		if (chatSession == null) {
+			return false;
+		}
 
-        return chatSession.composingNotificationsWereReceived();
-    }
+		return chatSession.composingNotificationsWereReceived();
+	}
 
-    /**
-     * Clear agent is typing.
-     * @param chatID the associated chat id.
-     */
-    public static void clearAgentTyping(String chatID) {
-        ChatSession chatSession = getChatSession(chatID);
-        if (chatSession == null) {
-            return;
-        }
+	/**
+	 * Clear agent is typing.
+	 * 
+	 * @param chatID
+	 *            the associated chat id.
+	 */
+	public static void clearAgentTyping(String chatID) {
+		ChatSession chatSession = getChatSession(chatID);
+		if (chatSession == null) {
+			return;
+		}
 
-        chatSession.clearNotificationReceived();
-    }
+		chatSession.clearNotificationReceived();
+	}
 
-    public static void customerIsTyping(String chatID) {
-        ChatSession chatSession = getChatSession(chatID);
-        if (chatSession == null) {
-            return;
-        }
+	public static void customerIsTyping(String chatID) {
+		ChatSession chatSession = getChatSession(chatID);
+		if (chatSession == null) {
+			return;
+		}
 
+		final MultiUserChat chat = chatSession.getGroupChat();
+		final Iterator iter = chat.getOccupants();
+		while (iter.hasNext()) {
+			String from = (String) iter.next();
+			String tFrom = StringUtils.parseResource(from);
+			String nickname = chat.getNickname();
+			if (tFrom != null && !tFrom.equals(nickname)) {
+				MessageEventManager messageEventManager = chatSession
+						.getMessageEventManager();
+				messageEventManager.sendComposingNotification(from, "l0k1");
+			}
+		}
+	}
 
-        final MultiUserChat chat = chatSession.getGroupChat();
-        final Iterator iter = chat.getOccupants();
-        while (iter.hasNext()) {
-            String from = (String)iter.next();
-            String tFrom = StringUtils.parseResource(from);
-            String nickname = chat.getNickname();
-            if (tFrom != null && !tFrom.equals(nickname)) {
-                MessageEventManager messageEventManager = chatSession.getMessageEventManager();
-                messageEventManager.sendComposingNotification(from, "l0k1");
-            }
-        }
-    }
+	public static ChatQueue getChatQueue(String chatID) {
+		ChatSession chatSession = getChatSession(chatID);
+		if (chatSession == null) {
+			return null;
+		}
 
+		ChatQueue queue = new ChatQueue();
+		if (chatSession.isClosed()) {
+			queue.setConnectionDropped(true);
+			return queue;
+		}
 
-    public static ChatQueue getChatQueue(String chatID) {
-        ChatSession chatSession = getChatSession(chatID);
-        if (chatSession == null) {
-            return null;
-        }
+		// We've been routed to an agent and received a MUC Invite.
+		if (chatSession.isInGroupChat()) {
+			queue.setRouted(true);
+			queue.setInQueue(false);
+			return queue;
+		} else if (chatSession.isInQueue()) {
+			final Workgroup workgroup = chatSession.getWorkgroup();
+			if (workgroup != null) {
+				queue.setQueuePosition(workgroup.getQueuePosition());
+				queue.setQueueTime(workgroup.getQueueRemainingTime());
+				queue.setInQueue(true);
+			}
+			return queue;
+		} else if (!chatSession.isInQueue() && !chatSession.isInGroupChat()) {
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 
-        ChatQueue queue = new ChatQueue();
-        if (chatSession.isClosed()) {
-            queue.setConnectionDropped(true);
-            return queue;
-        }
+			queue.setConnectionDropped(!chatSession.isInQueue()
+					&& !chatSession.isInGroupChat());
+			return queue;
+		}
 
-        // We've been routed to an agent and received a  MUC Invite.
-        if (chatSession.isInGroupChat()) {
-            queue.setRouted(true);
-            queue.setInQueue(false);
-            return queue;
-        }
-        else if (chatSession.isInQueue()) {
-            final Workgroup workgroup = chatSession.getWorkgroup();
-            if (workgroup != null) {
-                queue.setQueuePosition(workgroup.getQueuePosition());
-                queue.setQueueTime(workgroup.getQueueRemainingTime());
-                queue.setInQueue(true);
-            }
-            return queue;
-        }
-        else if (!chatSession.isInQueue() && !chatSession.isInGroupChat()) {
-            try {
-                Thread.sleep(3000);
-            }
-            catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+		if (!chatSession.getWorkgroup().isAvailable()) {
+			queue.setConnectionDropped(true);
+			chatSession.close();
+		}
 
-            queue.setConnectionDropped(!chatSession.isInQueue() && !chatSession.isInGroupChat());
-            return queue;
-        }
+		return queue;
+	}
 
-        if (!chatSession.getWorkgroup().isAvailable()) {
-            queue.setConnectionDropped(true);
-            chatSession.close();
-        }
+	public static ChatSession getChatSession(String chatID) {
+		ChatManager chatManager = ChatManager.getInstance();
+		return chatManager.getChatSession(chatID);
+	}
 
-        return queue;
-    }
+	public static String getEndMessage(String chatID, String workgroup) {
+		ChatManager chatManager = ChatManager.getInstance();
+		ChatSession chatSession = chatManager.getChatSession(chatID);
+		if (chatSession != null) {
+			String lastAgent = chatSession.getLastAgentInRoom();
+			if (lastAgent == null) {
+				lastAgent = "Agent";
+			}
+			return FormText.agentHasEndedConversation(lastAgent, workgroup);
+		}
 
-    public static ChatSession getChatSession(String chatID) {
-        ChatManager chatManager = ChatManager.getInstance();
-        return chatManager.getChatSession(chatID);
-    }
+		return "Your chat has ended.";
+	}
 
+	public static ChatLog[] getChatLogs(String uniqueid, String nickname)
+			throws Exception {
+		URL url = new URL(
+				"http://rubys-pc:9090/plugins/chatlog/chat-log?type=json&sender="
+						+ uniqueid);
+		ObjectMapper mapper = new ObjectMapper();
 
-    public static String getEndMessage(String chatID, String workgroup) {
-        ChatManager chatManager = ChatManager.getInstance();
-        ChatSession chatSession = chatManager.getChatSession(chatID);
-        if (chatSession != null) {
-            String lastAgent = chatSession.getLastAgentInRoom();
-            if (lastAgent == null) {
-                lastAgent = "Agent";
-            }
-            return FormText.agentHasEndedConversation(lastAgent, workgroup);
-        }
+		List<ChatLog> chatLogs = mapper.readValue(url,
+				new TypeReference<List<ChatLog>>() {
+				});
 
-        return "Your chat has ended.";
-    }
+		Collections.reverse(chatLogs);
+
+		for (ChatLog chatLog : chatLogs) {
+			if (uniqueid.equalsIgnoreCase(chatLog.getSender())
+					|| uniqueid.equalsIgnoreCase(chatLog.getReceiver())) {
+				chatLog.setNickname(nickname);
+			}
+		}
+		return chatLogs.toArray(new ChatLog[] {});
+	}
+
 }

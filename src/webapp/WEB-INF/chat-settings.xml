@@ -1,5 +1,5 @@
 <chat-settings>
-  <serverDomain>66.160.173.119</serverDomain>
+  <serverDomain>rubys-pc</serverDomain>
   <port>5222</port>
   <sslEnabled>false</sslEnabled>
   <sslPort>-1</sslPort>

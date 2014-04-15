@@ -8,6 +8,14 @@ import org.jivesoftware.webchat.util.StringUtils;
 
 public class CookieUtil {
 
+	public static String getUniqueid(HttpServletRequest request) {
+		Cookie cookie = getCookie(request, "uniqueid");
+		if (cookie != null) {
+			return cookie.getValue();
+		}
+		return null;
+	}
+
 	public static String getChatID(HttpServletRequest request,
 			HttpServletResponse response) {
 		String chatIDKey = "chatID";

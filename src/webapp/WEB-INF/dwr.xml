@@ -13,5 +13,6 @@
         </create>
         <convert converter="bean" match="org.jivesoftware.webchat.personal.ChatMessage"/>
         <convert converter="bean" match="org.jivesoftware.webchat.actions.ChatQueue"/>
+        <convert converter="bean" match="net.ueye.webchat.utils.ChatLog"/>
     </allow>
 </dwr>
